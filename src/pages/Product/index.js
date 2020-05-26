@@ -14,13 +14,13 @@ import './styles.css';
 import logoImg from '../../assets/logo.svg';
 import bananaTerra from '../../assets/product/bananaTerra.png';
 import alfaceCrespa from '../../assets/product/alfaceCrespa.png';
-import batataInglesa from '../../assets/product/batataInglesa.jpg';
+import batataInglesa from '../../assets/product/batataInglesa.png';
 import lentilha from '../../assets/product/lentilha.png';
 import snowFlakesCereal from '../../assets/product/snowFlakesCereal.png';
-import cocaCola from '../../assets/product/cocaCola.jpg';
-import adesOriginal from '../../assets/product/adesOriginal.jpg';
-import milhoLata from '../../assets/product/milhoLata.jpg';
-import catchup from '../../assets/product/catchup.jpg';
+import cocaCola from '../../assets/product/cocaCola.png';
+import adesOriginal from '../../assets/product/adesOriginal.png';
+import milhoLata from '../../assets/product/milhoLata.png';
+import catchup from '../../assets/product/catchup.png';
 import chocoCaju from '../../assets/product/chocoCaju.png';
 
 export default function Product(props) {
