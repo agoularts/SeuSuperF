@@ -15,19 +15,6 @@ export default function Register () {
 
     const history = useHistory();
 
-    useEffect(
-        () => {
-            async function fetchData() {
-                const token = await validaToken();
-                if(!token){
-                    return history.push('/');
-                }
-            }
-            fetchData()
-
-        },
-        []
-    )
 
     async function handleRegister(e) {
         e.preventDefault();

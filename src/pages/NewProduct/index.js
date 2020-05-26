@@ -44,19 +44,6 @@ export default function NewProduct() {
     const [monounsaturatedFat, setMonounsaturatedFat] = useState('');
 
     const history = useHistory();
-    
-    useEffect(
-        () => {
-            async function fetchData() {
-                const token = await validaToken();
-                if(!token){
-                    return history.push('/');
-                }
-            }
-            fetchData()
-        },
-        []
-    )
 
     async function handleNewProduct(e) {
         e.preventDefault();
