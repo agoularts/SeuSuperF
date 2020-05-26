@@ -103,7 +103,7 @@ export default function SearchProd(props) {
             </div>
 
             <div>
-                <Link className="back-link" to="/produto">
+                <Link className="back-link" to="/menu">
                     { <FiArrowLeft size={ 25 } color="#E02041" /> }
                         Voltar
                 </Link>
