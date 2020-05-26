@@ -1,0 +1,47 @@
+.newProduct-container {
+    width:100%;
+    max-width: 1180px;
+    padding: 0 30px;
+    margin: 32px auto;
+}
+
+.newProduct-container section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.newProduct-container section img {
+    height: 100px;
+}
+
+.newProduct-container section h1 {
+    margin: 64px 0 32px;
+    font-size: 32px;
+}
+
+.newProduct-container section a {
+    font-size: 18px;
+    color: #3e3e47;
+    line-height: 32px;
+    margin-right: 100px;
+}
+
+.newProduct-container form {
+    width: 100%;
+    max-width: 590px;
+    margin-left: 255px;
+}
+
+
+.newProduct-container form input {
+    margin-top: 5px;
+}
+
+.newProduct-container form textarea {
+    margin-top: 5px;
+}
+.newProduct-container h1 {
+    margin-top: 20px;
+    text-align: center;
+}

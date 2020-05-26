@@ -1,0 +1,22 @@
+.account-container h1 {
+    background-color: white;
+}
+
+
+.account-container::after {
+    content: "";
+    background-image: url("../../assets/wp.jpg");
+    opacity: 0.15;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+  }
+
+
+.account-container section {
+    background-color: white;
+    width: 10px;
+}
