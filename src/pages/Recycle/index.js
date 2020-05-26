@@ -9,15 +9,15 @@ import { validaToken } from '../../services/auth';
 import api from '../../services/api';
 import './styles.css';
 
-import logoImg from '../../../public/assets/logo.svg';
-import transgenico from '../../../public/assets/recycle/transgenico.jpeg';
-import vidro from '../../../public/assets/recycle/vidro.jpeg';
-import aluminio from '../../../public/assets/recycle/aluminio.jpeg';
-import pet from '../../../public/assets/recycle/pet.jpeg';
-import isopor from '../../../public/assets/recycle/isopor.jpeg';
-import hastesFlexiveis from '../../../public/assets/recycle/hastesFlexiveis.jpeg';
-import aparelhoBarbear from '../../../public/assets/recycle/aparelhoBarbear.jpeg';
-import cartelaRemedio from '../../../public/assets/recycle/cartelaRemedio.jpeg';
+import logoImg from '../../assets/logo.svg';
+import transgenico from '../../assets/recycle/transgenico.jpeg';
+import vidro from '../../assets/recycle/vidro.jpeg';
+import aluminio from '../../assets/recycle/aluminio.jpeg';
+import pet from '../../assets/recycle/pet.jpeg';
+import isopor from '../../assets/recycle/isopor.jpeg';
+import hastesFlexiveis from '../../assets/recycle/hastesFlexiveis.jpeg';
+import aparelhoBarbear from '../../assets/recycle/aparelhoBarbear.jpeg';
+import cartelaRemedio from '../../assets/recycle/cartelaRemedio.jpeg';
 
 
 export default function Recycle(props) {
