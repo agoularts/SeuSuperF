@@ -12,16 +12,16 @@ import { validaToken } from '../../services/auth';
 import './styles.css';
 
 import logoImg from '../../assets/logo.svg';
-import bananaTerra from '../../../public/assets/product/bananaTerra.png';
-import alfaceCrespa from '../../../public/assets/product/alfaceCrespa.png';
-import batataInglesa from '../../../public/assets/product/batataInglesa.png';
-import lentilha from '../../../public/assets/product/lentilha.png';
-import snowFlakesCereal from '../../../public/assets/product/snowFlakesCereal.png';
-import cocaCola from '../../../public/assets/product/cocaCola.png';
-import adesOriginal from '../../../public/assets/product/adesOriginal.png';
-import milhoLata from '../../../public/assets/product/milhoLata.png';
-import catchup from '../../../public/assets/product/catchup.png';
-import chocoCaju from '../../../public/assets/product/chocoCaju.png';
+import bananaTerra from '../../assets/product/bananaTerra.png';
+import alfaceCrespa from '../../assets/product/alfaceCrespa.png';
+import batataInglesa from '../../assets/product/batataInglesa.png';
+import lentilha from '../../assets/product/lentilha.png';
+import snowFlakesCereal from '../../assets/product/snowFlakesCereal.png';
+import cocaCola from '../../assets/product/cocaCola.png';
+import adesOriginal from '../../assets/product/adesOriginal.png';
+import milhoLata from '../../assets/product/milhoLata.png';
+import catchup from '../../assets/product/catchup.png';
+import chocoCaju from '../../assets/product/chocoCaju.png';
 
 export default function Product(props) {
     const [ product, setProduct ] = useState([]);
