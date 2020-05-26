@@ -58,7 +58,7 @@ export default function Menu() {
                     <br />Favoritos
                 </ Link>
           
-                <Link className="button" to="/reciclagem">
+                <Link className="button" to="/reciclagem/lista">
                     { < FaRecycle size={ 30 } color="#fff" /> }
                     <br />Reciclagem
                 </ Link>
