@@ -3,7 +3,6 @@ import { Link, useHistory } from 'react-router-dom';
 import { MdShoppingCart, MdLocationOn, MdSettings, MdPerson, MdExitToApp } from 'react-icons/md';
 import { AiFillHeart } from 'react-icons/ai';
 import { FaRecycle, FaShoppingBag } from 'react-icons/fa';
-import { Button } from '@material-ui/core';
 
 import { validaToken } from '../../services/auth';
 import './styles.css';
