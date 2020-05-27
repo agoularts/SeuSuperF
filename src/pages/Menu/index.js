@@ -3,6 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { MdShoppingCart, MdLocationOn, MdSettings, MdPerson, MdExitToApp } from 'react-icons/md';
 import { AiFillHeart } from 'react-icons/ai';
 import { FaRecycle, FaShoppingBag } from 'react-icons/fa';
+import { Button } from '@material-ui/core';
 
 import { validaToken } from '../../services/auth';
 import './styles.css';
@@ -29,9 +30,12 @@ export default function Menu() {
         <div className="menu-container">
 
             <section> 
-            <img src={ logo } alt="Seu Super" />
+                <img src={ logo } alt="Seu Super" />
+
             {/*instancia a Barra de pesquisa*/}
-                <input type="search" placeholder="Buscar"> </input>
+                <input type="search" placeholder="Buscar">
+
+                </input>
 
             {/*instancia os botoes do Menu*/}
                     <Link className="button" to="/mercados">
@@ -44,17 +48,17 @@ export default function Menu() {
                     <br />Produtos
                 </ Link>
         
-                 <Link className="button" to="/menu">
+                <Link className="button" to="/mapa">
                     { < MdLocationOn size={ 30 } color="#fff" /> }
                     <br />Mapa
                 </ Link>
             
-                <Link className="button" to="/menu">
+                <Link className="button" to="/favoritos">
                     { < AiFillHeart size={ 30 } color="#fff" /> }
                     <br />Favoritos
                 </ Link>
           
-                <Link className="button" to="/reciclagem/lista">
+                <Link className="button" to="/reciclagem">
                     { < FaRecycle size={ 30 } color="#fff" /> }
                     <br />Reciclagem
                 </ Link>
@@ -62,12 +66,12 @@ export default function Menu() {
 
             <div className="content">
 
-                <Link className="button" to="/menu">
+                <Link className="button" to="/conta">
                     { < MdPerson size={ 32 } color="#fff" /> }
                     &nbsp; Conta
                 </ Link>
 
-                <Link className="button" to="/menu">
+                <Link className="button" to="/conta">
                     { < MdSettings size={ 32 } color="#fff" /> }
                     &nbsp; Opções
                 </ Link>
@@ -81,4 +85,3 @@ export default function Menu() {
         </div >
     )
 }
-
