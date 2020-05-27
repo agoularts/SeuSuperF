@@ -66,12 +66,12 @@ export default function Menu() {
 
             <div className="content">
 
-                <Link className="btnadd" to="/menu">
+                <Link className="button" to="/menu">
                     { < MdPerson size={ 32 } color="#fff" /> }
                     &nbsp; Conta
                 </ Link>
 
-                <Link className="btnadd" to="/menu">
+                <Link className="button" to="/menu">
                     { < MdSettings size={ 32 } color="#fff" /> }
                     &nbsp; Opções
                 </ Link>
