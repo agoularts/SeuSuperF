@@ -19,18 +19,7 @@ export default function Profile(props) {
                     return history.push('/');
                 }
             }
-
-            try {
-                const { email } = props.match.params
-                const retornoApi = await api.get(`/user`, {headers: { auth: localStorage.userToken }} )
-                setUser(retornoApi.data)
-
-            } catch (error) {
-                alert('Erro ao consultar a API')                
-            }
-
             fetchData()
-
         },
         []
     )
