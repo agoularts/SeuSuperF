@@ -32,9 +32,7 @@ export default function Menu() {
             <section> 
             <img src={ logo } alt="Seu Super" />
             {/*instancia a Barra de pesquisa*/}
-                <input type="search" placeholder="Buscar">
-
-                </input>
+                <input type="search" placeholder="Buscar"> </input>
 
             {/*instancia os botoes do Menu*/}
                     <Link className="button" to="/mercados">
