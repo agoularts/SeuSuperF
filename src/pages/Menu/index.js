@@ -28,10 +28,9 @@ export default function Menu() {
 
     return (
         <div className="menu-container">
-            <img src={ logo } alt="Seu Super" />
 
-            <section className="menu-btn"> 
-        
+            <section> 
+            <img src={ logo } alt="Seu Super" />
             {/*instancia a Barra de pesquisa*/}
                 <input type="search" placeholder="Buscar">
 
