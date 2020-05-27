@@ -44,6 +44,10 @@
 
 }
 
+.menu-container .content {
+    display: inline-block;
+}
+
 .menu-container .content .button {
     height: auto;
     width: 25%;
@@ -53,6 +57,4 @@
     border-radius: 8px;
 }
 
-.menu-container .content {
-    display: inline-block;
-}
+
