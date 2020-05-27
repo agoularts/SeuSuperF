@@ -15,7 +15,8 @@
     justify-items: center;
 }
 
-.menu-container section {
+.menu-container .menu-btn {
+    display: flex;
     width: 100%;
     margin-left: 20px;
     margin-right: 20px;
