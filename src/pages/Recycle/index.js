@@ -66,7 +66,7 @@ export default function Recycle(props) {
 
                         <section className="recycle-info">
                         <Paper className="recycle-img-paper">
-                            <img src={  recy.image  } alt={ recy.name }/></Paper>
+                            <img src={ recy.image } alt={ recy.name }/></Paper>
                             
                             <Paper className="recycle-info-paper">
                                 <p> { recy.description } </p>

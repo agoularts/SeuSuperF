@@ -56,3 +56,12 @@
     line-height: 30px;
     border-radius: 8px;
 }
+
+.menu-container .content .btnadd {
+    height: auto;
+    width: 25%;
+    padding: 6px;
+    font-size: 5px;
+    line-height: 30px;
+    border-radius: 8px;
+}

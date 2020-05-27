@@ -8,7 +8,6 @@ import logoImg from '../../assets/logo.svg'
 
 export default function Profile(props) {        
     const userName = localStorage.getItem('userName');
-    const userEmail = localStorage.getIdem();
     const history = useHistory();
     
     useEffect(

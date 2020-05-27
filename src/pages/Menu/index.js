@@ -48,12 +48,12 @@ export default function Menu() {
                     <br />Produtos
                 </ Link>
         
-                <Link className="button" to="/mapa">
+                 <Link className="button" to="/menu">
                     { < MdLocationOn size={ 30 } color="#fff" /> }
                     <br />Mapa
                 </ Link>
             
-                <Link className="button" to="/favoritos">
+                <Link className="button" to="/menu">
                     { < AiFillHeart size={ 30 } color="#fff" /> }
                     <br />Favoritos
                 </ Link>
@@ -66,12 +66,12 @@ export default function Menu() {
 
             <div className="content">
 
-                <Link className="button" to="/profile">
+                <Link className="btnadd" to="/menu">
                     { < MdPerson size={ 32 } color="#fff" /> }
                     &nbsp; Conta
                 </ Link>
 
-                <Link className="button" to="/opcoes">
+                <Link className="btnadd" to="/menu">
                     { < MdSettings size={ 32 } color="#fff" /> }
                     &nbsp; Opções
                 </ Link>
