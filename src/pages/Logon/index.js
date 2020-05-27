@@ -1,6 +1,6 @@
 import React, { useState, useEffect }from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiLogIn } from 'react-icons/fi';
+import { FiUserPlus } from 'react-icons/fi';
 
 import api from '../../services/api';
 import { logout } from '../../services/auth';
@@ -57,7 +57,7 @@ export default function Logon() {
                     <button className="button" type="submit">Entrar</button>
 
                     <Link className="back-link" to="/cadastro">
-                        <FiLogIn size={ 16 } color="#E02041"/>
+                        <FiUserPlus size={ 20 } color="#E02041"/>
                         Não tenho cadastro
                     </Link>
                 </form>
