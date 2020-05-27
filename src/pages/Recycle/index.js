@@ -10,14 +10,14 @@ import api from '../../services/api';
 import './styles.css';
 
 import logoImg from '../../assets/logo.svg';
-import transgenico from '../../assets/recycle/transgenico.jpeg';
-import vidro from '../../assets/recycle/vidro.jpeg';
-import aluminio from '../../assets/recycle/aluminio.jpeg';
-import pet from '../../assets/recycle/pet.jpeg';
-import isopor from '../../assets/recycle/isopor.jpeg';
-import hastesFlexiveis from '../../assets/recycle/hastesFlexiveis.jpeg';
-import aparelhoBarbear from '../../assets/recycle/aparelhoBarbear.jpeg';
-import cartelaRemedio from '../../assets/recycle/cartelaRemedio.jpeg';
+import transgenico from '../../assets/recycle/transgenico.png';
+import vidro from '../../assets/recycle/vidro.png';
+import aluminio from '../../assets/recycle/aluminio.png';
+import pet from '../../assets/recycle/pet.png';
+import isopor from '../../assets/recycle/isopor.png';
+import hastesFlexiveis from '../../assets/recycle/hastesFlexiveis.png';
+import aparelhoBarbear from '../../assets/recycle/aparelhoBarbear.png';
+import cartelaRemedio from '../../assets/recycle/cartelaRemedio.png';
 
 
 export default function Recycle(props) {

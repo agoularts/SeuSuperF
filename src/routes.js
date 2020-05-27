@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import Account from './pages/Account';
 import Favorite from './pages/Favorites';
 import Logon from './pages/Logon';
 import Maps from './pages/Maps';
@@ -43,8 +42,6 @@ export default function Routes(){
                 <PrivateRoutes path="/produto/novo" exact component={ NewProduct } />
                 <PrivateRoutes path="/produto/lista" exact component={ SearchProd } />
                 <PrivateRoutes exact path="/produto/:id" component={Product} />
-
-                <PrivateRoutes path="/conta" exact component={ Account } />
 
                 <PrivateRoutes path="/profile" exact component={ Profile } />
                 
