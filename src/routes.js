@@ -36,12 +36,12 @@ export default function Routes(){
                 <PrivateRoutes path="/mercados/novo" exact component={ NewMarket } />
                 <PrivateRoutes path="/mercados" exact component={ Market } />
 
-                <PrivateRoutes path="/reciclagem/lista" exact component={ ListRecycle } />
                 <PrivateRoutes path="/reciclagem/:id" exact component={ Recycle } />
-                
-                <PrivateRoutes path="/produto/novo" exact component={ NewProduct } />
-                <PrivateRoutes path="/produto/lista" exact component={ SearchProd } />
+                <PrivateRoutes path="/reciclagem" exact component={ ListRecycle } />
+               
                 <PrivateRoutes exact path="/produto/:id" component={Product} />
+                <PrivateRoutes path="/produto/novo" exact component={ NewProduct } />
+                <PrivateRoutes path="/produto" exact component={ SearchProd } />
 
                 <PrivateRoutes path="/profile" exact component={ Profile } />
                 
