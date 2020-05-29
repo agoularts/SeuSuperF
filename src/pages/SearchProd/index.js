@@ -15,7 +15,6 @@ import logoImg from '../../assets/logo.svg';
 export default function SearchProd(props) {
     const [ product, setProduct ] = useState([]);
     const [ search, setSearch ] = useState('');
-
     const history = useHistory();
 
     useEffect(
@@ -24,32 +23,32 @@ export default function SearchProd(props) {
                 const token = await validaToken();
                 if(!token){
                     return history.push('/');
-                }
-
-                try {
-                    const retornoApi = await api.get('listProduct', { headers: { auth: localStorage.userToken }})
-                    setProduct(retornoApi.data)
-
-                } catch(err) {
-                    alert('Deu ruim')
-                }
+                }   
             }
             fetch()
         },
         []
     )
 
+    let time = null
+    const handleDigitado = e => {
+        let texto = e.target.value
+        clearTimeout(time)
+        time = setTimeout(() => {
+            setSearch(texto)
+        }, 1000)
+    }
+
     useEffect(() => {
         async function fetch() {
             try {
                 const params = {};
-                if( search ){
-                    params.name_like = search;
-                }
+                    params.name = search;
 
-                const retornoApi = await api.get('searchProduct', { params })
+
+                const retornoApi = await api.get('searchProduct', { headers: { auth: localStorage.userToken }, params })
                     setProduct(retornoApi.data)
-                    console.log(retornoApi);
+                    console.log(retornoApi.data)
                 } catch(err) {
                     alert('Deu ruim')
                 }
@@ -76,9 +75,8 @@ export default function SearchProd(props) {
             <input type="search" 
                 className="search-input" 
                 placeholder="Busque por produtos e mercados..."
-                value={ search }
-                onChange={(e) => setSearch(e.target.value)}
-                />
+                onChange={(e) => handleDigitado(e)}
+            />
 
             <div>
                 <Link className="back-link" to="/menu">
