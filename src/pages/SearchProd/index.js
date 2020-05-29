@@ -47,7 +47,7 @@ export default function SearchProd(props) {
                     params.name_like = search;
                 }
 
-                const retornoApi = await api.get('listProduct', { headers: { auth: localStorage.userToken }, params })
+                const retornoApi = await api.get('searchProduct', { params })
                     setProduct(retornoApi.data)
                     console.log(retornoApi);
                 } catch(err) {
