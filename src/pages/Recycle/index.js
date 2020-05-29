@@ -46,10 +46,14 @@ export default function Recycle(props) {
         []
     )
 
+    async function gotoMenu() {
+        history.push("/menu");
+    }
+
     return (
         <div className="recycle-container" >
             <header>
-                <img src={ logoImg } alt="Seu Super" />
+                <img src={ logoImg } alt="Seu Super" onClick={() => gotoMenu()} />
             </header>
 
             <div>

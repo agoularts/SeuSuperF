@@ -48,22 +48,25 @@ export default function Product(props) {
             }
             
             fetchData()
-
         },
         [props.match.params]
     )
+
+    async function gotoMenu() {
+        history.push("/menu");
+    } 
 
     return (
         <div className="product-container" >
 
             <header> 
-                <img src={ logoImg } alt="Seu Super" />
+                <img src={ logoImg } alt="Seu Super" onClick={() => gotoMenu()} />
             </header>
             <div>
                 { product.map(prod => (
                     <div key={ prod.id }>
                         <section className="title-container">
-                            <Link className="back-link" to="/produto/lista">
+                            <Link className="back-link" to="/produto">
                                 { <FiArrowLeft size={ 25 } color="#000" /> }</Link>
 
                             <Paper className="title-paper">

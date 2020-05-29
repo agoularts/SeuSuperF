@@ -59,10 +59,13 @@ export default function Favorite(props) {
         history.push('/');
     }
 
+    async function gotoMenu() {
+        history.push("/menu");
+    } 
     return (
         <div className="fav-container">
             <header>
-                <img src={ logoImg } alt="Seu Super"/>
+                <img src={ logoImg } alt="Seu Super" onClick={() => gotoMenu()}/>
                 <span>Seus Favoritos</span>
 
                 {/* Botão de logout */}

@@ -82,10 +82,14 @@ export default function SearchProd(props) {
         history.push(`/produto/${ id }`);
     }
 
+    async function gotoMenu() {
+        history.push("/menu");
+    } 
+
     return (
         <div className="search-container">
             <header>
-                <img src={ logoImg } alt="Seu Super"/>
+                <img src={ logoImg } alt="Seu Super" onClick={() => gotoMenu()} />
             </header>
 
             <div className={classes.search}>

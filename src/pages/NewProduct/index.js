@@ -114,11 +114,15 @@ export default function NewProduct() {
         console.log(data);
     }
 
+    async function gotoMenu() {
+        history.push("/menu");
+    } 
+
     return (
         <div className="newProduct-container">
                 {/* Logo e texto */}
                 <section className="logo">
-                    <img src={ logoImg } alt="Seu Super"/>
+                    <img src={ logoImg } alt="Seu Super" onClick={() => gotoMenu()} />
                     <h1>Cadastrar novo produto</h1>
 
                 {/* Voltar */} 

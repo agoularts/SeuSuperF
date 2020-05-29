@@ -23,10 +23,14 @@ export default function Profile(props) {
         []
     )
     
+    async function gotoMenu() {
+        history.push("/menu");
+    }  
+
     return (
         <div className="profile-container">
             <header>
-                <img src={ logoImg } alt="Seu Super"/>
+                <img src={ logoImg } alt="Seu Super" onClick={() => gotoMenu()} />
                 <span>Bem vindo, { userName }!</span>
             </header>
         </div>

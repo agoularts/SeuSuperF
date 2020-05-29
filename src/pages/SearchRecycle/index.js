@@ -34,10 +34,14 @@ export default function ListRecycle(props) {
         []
     )
 
+    async function gotoMenu() {
+        history.push("/menu");
+    }
+    
     return (
         <div className="listRec-container">
             <header> 
-                <img src={ logoImg } alt="Seu Super"/>
+                <img src={ logoImg } alt="Seu Super" onClick={() => gotoMenu()} />
             </header>
 
             <div>

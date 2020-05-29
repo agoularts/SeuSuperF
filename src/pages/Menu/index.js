@@ -43,7 +43,7 @@ export default function Menu() {
                     <br /> Mercado
                     </ Link>
 
-                <Link className="button" to="/produto/lista">
+                <Link className="button" to="/produto">
                     { < FaShoppingBag size={ 30 } color="#fff" /> }
                     <br />Produtos
                 </ Link>
@@ -66,12 +66,12 @@ export default function Menu() {
 
             <div className="content">
 
-                <Link className="button" to="/conta">
+                <Link className="button" to="/">
                     { < MdPerson size={ 32 } color="#fff" /> }
                     &nbsp; Conta
                 </ Link>
 
-                <Link className="button" to="/conta">
+                <Link className="button" to="/">
                     { < MdSettings size={ 32 } color="#fff" /> }
                     &nbsp; Opções
                 </ Link>

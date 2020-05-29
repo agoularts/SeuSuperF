@@ -54,13 +54,17 @@ export default function NewMarket() {
         }
     }
 
+    async function gotoMenu() {
+        history.push("/menu");
+    } 
+
     return (
         <div className="newMarket-container">
             <div className="content">
 
                 {/* Logo e texto */}
                 <section className="logo">
-                    <img src={ logoImg } alt="Seu Super"/>
+                    <img src={ logoImg } alt="Seu Super" onClick={() => gotoMenu()} />
                     <h1>Cadastrar novo mercado</h1>
                     <p>Faça seu cadastro, entre na plataforma.</p>
 

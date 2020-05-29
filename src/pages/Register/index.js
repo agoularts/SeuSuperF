@@ -35,12 +35,18 @@ export default function Register () {
         }
     }
 
+    
+    async function gotoMenu() {
+        history.push("/menu");
+    }
+
+    
     return (
         <div className="register-container">
             <div className="content">
 
                 <section>
-                    <img src={ logoImg } alt="Seu Super"/>
+                    <img src={ logoImg } alt="Seu Super" onClick={() => gotoMenu()} />
 
                     <h1>Cadastro</h1>
                     <p>Faça seu cadastro, entre na plataforma e encontre os seus supermercados favoritos.</p>

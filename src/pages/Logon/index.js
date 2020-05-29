@@ -34,15 +34,18 @@ export default function Logon() {
         }
     }
 
+
+
     return (
         <div className="logon-container">
             <section className="form">
-                <img src={ logo } alt="Seu Super"/>
+                <img src={ logo } alt="Seu Super" />
 
                 <form onSubmit={ handleLogin }>
                     <h1>Faça seu login</h1>
 
                     <input 
+                        type="email"
                         placeholder="E-mail"
                         value={ email }
                         onChange={ e => setEmail(e.target.value) }

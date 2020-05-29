@@ -27,12 +27,18 @@ export default function Maps() {
 
         history.push('/');
     }
+
+    async function gotoMenu() {
+        history.push("/menu");
+    } 
+
+
     return (
         <div className="maps-container">
         <h1>Mapa</h1>
 
             <Link className="back-link" to="/menu">
-                <FiArrowLeft size={16} color="#E02041" />
+                <FiArrowLeft size={16} color="#E02041" onClick={() => gotoMenu()} />
                         Voltar ao Menu
             </Link>
 

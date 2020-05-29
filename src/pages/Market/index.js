@@ -51,10 +51,15 @@ export default function Market(props) {
         }
     }
  
+    async function gotoMenu() {
+        history.push("/menu");
+    } 
+
+    
     return (
         <div className="market-container">
             <header>
-                <img src={ logoImg } alt="Seu Super"/>
+                <img src={ logoImg } alt="Seu Super" onClick={() => gotoMenu()} />
                 <span>Bem vindo { userName }!</span>
 
                 {/* Botão de acesso a tela de cadastro de novo mercado */}
