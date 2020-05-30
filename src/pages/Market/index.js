@@ -43,12 +43,17 @@ export default function Market(props) {
 
     async function handleDeleteMarket(cnpj) {
         try {
-            await api.delete(`mercados/${ cnpj }`); 
-            setMarkets(markets.filter(market => market.cnpj !== cnpj));
-
+            await api.delete(`market/${cnpj}`, {
+                headers: { 
+                    auth: localStorage.userToken,
+                 }
+            }); 
+                
+                setMarkets(markets.filter(market => market.cnpj !== cnpj));
         } catch (err) {
+            console.log(cnpj)
             alert('Erro ao deletar o caso, tente novamente')
-        }
+        } 
     }
  
     async function gotoMenu() {
