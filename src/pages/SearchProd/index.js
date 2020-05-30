@@ -2,10 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 
-import { fade, makeStyles } from '@material-ui/core/styles';
-import InputBase from '@material-ui/core/InputBase';
-import SearchIcon from '@material-ui/icons/Search';
-
 import api from '../../services/api';
 import { validaToken } from '../../services/auth';
 import './styles.css';
@@ -44,7 +40,6 @@ export default function SearchProd(props) {
             try {
                 const params = {};
                     params.name = search;
-
 
                 const retornoApi = await api.get('searchProduct', { headers: { auth: localStorage.userToken }, params })
                     setProduct(retornoApi.data)

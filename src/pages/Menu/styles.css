@@ -8,30 +8,26 @@
     justify-content: space-between;
 }
 
-.menu-container img {
-    height: 90px;
-    margin-left: 110%;
-    margin-bottom: 30px;
-    justify-items: center;
+.menu-container .logo img {
+    height: 100px;
+    margin-left: 40%;
 }
 
-.menu-container section {
-    width: 100%;
-    margin-left: 20px;
-    margin-right: 20px;
-    max-width: 500px;
-    /*border: 5px solid #000;*/
+/* enquadra os botões do menu */
+.menu-container .buttons {
+    align-content: center;
 }
 
-.menu-container a {
-    padding: 12px;
-    font-size: 25px;
+/* formato dos botões */
+.menu-container .buttons .button{
+    height: auto;
+    width: 50%;
+    padding: 6px;
     line-height: 30px;
+    border-radius: 35px;
+    font-size: 20px;
     text-align: center;
-    border-radius: 8px;
-    height: 90px;
-    width: 90%;
-    margin-left: 150px;
+    margin-left: 25%;
 }
 
 .menu-container .content {

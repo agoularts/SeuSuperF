@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 
-import { validaToken } from '../../services/auth';
 import api from '../../services/api';
 import './styles.css';
 
@@ -36,17 +35,12 @@ export default function Register () {
     }
 
     
-    async function gotoMenu() {
-        history.push("/menu");
-    }
-
-    
     return (
         <div className="register-container">
             <div className="content">
 
                 <section>
-                    <img src={ logoImg } alt="Seu Super" onClick={() => gotoMenu()} />
+                    <img src={ logoImg } alt="Seu Super" />
 
                     <h1>Cadastro</h1>
                     <p>Faça seu cadastro, entre na plataforma e encontre os seus supermercados favoritos.</p>

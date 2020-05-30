@@ -47,11 +47,6 @@ export default function Menu() {
                     { < FaShoppingBag size={ 30 } color="#fff" /> }
                     <br />Produtos
                 </ Link>
-        
-                <Link className="button" to="/mapa">
-                    { < MdLocationOn size={ 30 } color="#fff" /> }
-                    <br />Mapa
-                </ Link>
             
                 <Link className="button" to="/favoritos">
                     { < AiFillHeart size={ 30 } color="#fff" /> }

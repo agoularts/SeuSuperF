@@ -62,14 +62,22 @@ export default function NewProduct() {
             howToDiscard,
         };
         
-        try {
-            const response = await api.post('product', data);
-            history.push('/produto/novo');
-
-            alert(`${ response.data.name } cadastrado com sucesso! ID ${ response.data.id }`);
+        if(name == '' || img == '' || description == '' || category == '' || 
+            brand == '' || curiosities == '' || specifications == '' || howToBuy == '' || 
+            howToPrepare == '' || howToStore == '' || howToDiscard == '' ) {
             
-        } catch (err) {
-            alert('Erro no cadastro do produto, tente novamente.');
+            alert('Preencha os campos com valores válidos.');
+        }  
+        else{    
+            try {
+                const response = await api.post('product', data);
+                history.push('/produto/novo');
+
+                alert(`${ response.data.name } cadastrado com sucesso! ID ${ response.data.id }`);
+                
+            } catch (err) {
+                alert('Erro no cadastro do produto, tente novamente.');
+            }
         }
     }
 
@@ -103,16 +111,26 @@ export default function NewProduct() {
         
         console.log(data);
         
-        try {
-            const response = await api.post('nutrition', data);
-            history.push('/produto');
-            alert(`Informações nutricionais do produto ${ response.data.product_id } cadastradas com sucesso!`);
-        } catch (err) {
-            alert('Erro no cadastro, tente novamente.');
+        if(product_id == '' || portion == '' || calories == '' || carbohidrate == '' 
+            || protein == '' || totalFat == '' || saturatedFat == '' || transFat == '' 
+            || cholesterol == '' || dietaryFiber == '' || sodium == '' || vitamins == '' 
+            || calcium == '' || vitB1 == '' || vitB2 == '' || vitB6 == '' || iron == '' 
+            || niacin == '' || panthotenicAcid == '' || folicAcid == '' || sugar == '' 
+            || monounsaturatedFat == '') {
+            
+            alert('Preencha os campos com valores válidos.');
+        }  
+        else{   
+            try {
+                const response = await api.post('nutrition', data);
+                history.push('/produto');
+                alert(`Informações nutricionais do produto ${ response.data.product_id } cadastradas com sucesso!`);
+            } catch (err) {
+                alert('Erro no cadastro, tente novamente.');
+            }
         }
-
-        console.log(data);
     }
+
 
     async function gotoMenu() {
         history.push("/menu");
@@ -209,133 +227,133 @@ export default function NewProduct() {
                 {/* inputs */}
                     <form onSubmit={ handleNewNutrition }>
 
-                        <input 
+                        <input type="number"
                             placeholder="ID"
                             value={ product_id }
                             onChange={ e=> setProduct_id(e.target.value) }
                         />
 
-                        <input 
+                        <input type="number" 
                             placeholder="Porção (com unidade de medida)"
                             value={ portion }
                             onChange={ e=> setPortion(e.target.value) }
                         />
 
-                        <input 
+                        <input type="number"
                             placeholder="Valor Energético (com unidade de medida)"
                             value={ calories }
                             onChange={ e=> setCalories(e.target.value) }
                         />   
 
-                        <input 
+                        <input type="number" 
                             placeholder="Carboidratos (com unidade de medida)"
                             value={ carbohidrate }
                             onChange={ e=> setCarbohidrate(e.target.value) }
                         /> 
 
-                        <input
+                        <input type="number"
                             placeholder="Proteínas (com unidade de medida)"
                             value={ protein }
                             onChange={e => setProtein(e.target.value)}
                         />
 
-                        <input
+                        <input type="number"
                             placeholder="Gorduras Totais (com unidade de medida)"
                             value={ totalFat }
                             onChange={ e=> setTotalFat(e.target.value) }
                         /> 
 
-                        <input
+                        <input type="number"
                             placeholder="Gorduras Saturadas (com unidade de medida)"
                             value={ saturatedFat }
                             onChange={ e=> setSaturatedFat(e.target.value) }
                         />
 
-                        <input
+                        <input type="number"
                             placeholder="Gorduras Trans (com unidade de medida)"
                             value={ transFat }
                             onChange={ e=> setTransFat(e.target.value) }
                         />
 
-                        <input
+                        <input type="number"
                             placeholder="Colesterol (com unidade de medida)"
                             value={ cholesterol }
                             onChange={ e=> setCholesterol(e.target.value) }
                         />
 
-                        <input
+                        <input type="number"
                             placeholder="Fibra Alimentar (com unidade de medida)"
                             value={ dietaryFiber }
                             onChange={ e=> setDietaryFiber(e.target.value) }
                         />
 
-                        <input
+                        <input type="number"
                             placeholder="Sódio (com unidade de medida)"
                             value={ sodium }
                             onChange={ e=> setSodium(e.target.value) }
                         /> 
 
-                        <input
+                        <input type="number"
                             placeholder="Vitaminas (com unidade de medida)"
                             value={ vitamins }
                             onChange={ e=> setVitamins(e.target.value) }
                         /> 
 
-                        <input
+                        <input type="number"
                             placeholder="Cálcio (com unidade de medida)"
                             value={ calcium }
                             onChange={ e=> setCalcium(e.target.value) }
                         /> 
 
-                        <input
+                        <input type="number"
                             placeholder="Açúcares (com unidade de medida)"
                             value={ sugar }
                             onChange={ e=> setSugar(e.target.value) }
                         /> 
 
-                        <input
+                        <input type="number"
                             placeholder="Ferro (com unidade de medida)"
                             value={ iron }
                             onChange={ e=> setIron(e.target.value) }
                         /> 
                         
-                        <input
+                        <input type="number"
                             placeholder="Vitamina B1 (com unidade de medida)"
                             value={ vitB1 }
                             onChange={ e=> setVitB1(e.target.value) }
                         /> 
                         
-                        <input
+                        <input type="number"
                             placeholder="Vitamina B2 (com unidade de medida)"
                             value={ vitB2 }
                             onChange={ e=> setVitB2(e.target.value) }
                         /> 
                         
-                        <input
+                        <input type="number"
                             placeholder="Vitamina B6 (com unidade de medida)"
                             value={ vitB6 }
                             onChange={ e=> setVitB6(e.target.value) }
                         />
                         
-                        <input
+                        <input type="number"
                             placeholder="Niacina (com unidade de medida)"
                             value={ niacin }
                             onChange={ e=> setNiacin(e.target.value) }
                         />
                         
-                        <input
+                        <input type="number"
                             placeholder="Ácido Pantotênico (com unidade de medida)"
                             value={ panthotenicAcid }
                             onChange={ e=> setPanthotenicAcid(e.target.value) }
                         />
                         
-                        <input
+                        <input type="number"
                             placeholder="Ácido Fólico (com unidade de medida)"
                             value={ folicAcid }
                             onChange={ e=> setFolicAcid(e.target.value) }
                         /> 
 
-                        <input
+                        <input type="number"
                             placeholder="Gordura Monoinsaturada (com unidade de medida)"
                             value={ monounsaturatedFat }
                             onChange={ e=> setMonounsaturatedFat(e.target.value) }

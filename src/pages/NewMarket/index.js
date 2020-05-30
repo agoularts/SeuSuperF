@@ -83,7 +83,7 @@ export default function NewMarket() {
                             onChange={ e=> setName(e.target.value) }
                         />
 
-                        <input 
+                        <input type="text" pattern="[0-9]*"
                             placeholder="CNPJ"
                             value={ cnpj }
                             onChange={ e=> setCnpj(e.target.value) }
@@ -107,7 +107,7 @@ export default function NewMarket() {
                             onChange={ e=> setUf(e.target.value) }
                         /> 
 
-                        <input 
+                        <input type="text" pattern="[0-9]*"
                             placeholder="Telefone"
                             value={ phone }
                             onChange={ e=> setPhone(e.target.value) }
