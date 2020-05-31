@@ -69,7 +69,7 @@ export default function Product(props) {
         }
 
     }
-
+/*
     async function handleDeleteFavorite(product) {
         try {
             await api.delete(`favorites/${product}`, {
@@ -84,6 +84,7 @@ export default function Product(props) {
             alert('Erro ao deletar o caso, tente novamente')
         } 
     }
+*/
 
     async function gotoMenu() {
         history.push("/menu");

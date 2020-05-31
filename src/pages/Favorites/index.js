@@ -8,11 +8,9 @@ import logoImg from '../../assets/logo.svg'
 
 export default function Favorite(props) {
     const [favorites, setFavorites] = useState([]);
-    const [products, setProducts] = useState([]);
     const history = useHistory();
 
     const userId = localStorage.getItem('userID');
-    console.log(favorites)
     
     useEffect(
         () => {
@@ -24,12 +22,8 @@ export default function Favorite(props) {
                 
                 try {
                     const retornoApi = await api.get('/favorite', {headers: { auth: localStorage.userToken }} )
-                    setFavorites(retornoApi.data)
-                    console.log(favorites)
-                
+                    setFavorites(retornoApi.data)                
                 } catch(err) {
-                    console.log(userId)
-
                     alert('Deu ruim')
                 }
             }
@@ -57,7 +51,7 @@ export default function Favorite(props) {
                 <div key={ fav.user_id }>
                 
                     <button className="button" onClick={() => gotoProduct(fav.product_id) }>
-                        { fav.id } - { fav.name }
+                        { fav.id } { fav.name }
                     </button>
                 </div>
             ))}
