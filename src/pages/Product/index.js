@@ -4,8 +4,7 @@ import { FiArrowLeft } from 'react-icons/fi';
 import { Button, Paper, ExpansionPanel, ExpansionPanelSummary, 
     ExpansionPanelDetails, Typography } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Checkbox from '@material-ui/core/Checkbox';
-import { Favorite , FavoriteBorder } from '@material-ui/icons';
+import { Favorite, FavoriteBorder } from '@material-ui/icons';
 
 import api from '../../services/api';
 import { validaToken } from '../../services/auth';
@@ -25,9 +24,10 @@ import chocoCaju from '../../assets/product/chocoCaju.png';
 
 export default function Product(props) {
     const [ product, setProduct ] = useState([]);
+    const [ fav, setFav ] = useState(false);
 
     const history = useHistory()
-
+    const userID = localStorage.getItem('userID');
 
     useEffect(
         () => {
@@ -52,6 +52,39 @@ export default function Product(props) {
         [props.match.params]
     )
 
+    async function handleNewFavorite(user, product){
+        setFav(!fav)
+        if (fav){
+            const data = {
+               user_id: user,
+               product_id: product
+            };
+
+            try {
+                const response = await api.post('favorites', data);
+                alert('Adicionado aos favoritos!');
+            } catch (err) {
+                alert('Erro ao adicionar favorito, tente novamente.');
+            }  
+        }
+
+    }
+
+    async function handleDeleteFavorite(product) {
+        try {
+            await api.delete(`favorites/${product}`, {
+                headers: { 
+                    auth: localStorage.userToken,
+                 }
+            }); 
+                
+            setFav(fav.filter(fav => fav.product_id !== product));
+        } catch (err) {
+            console.log(product_id)
+            alert('Erro ao deletar o caso, tente novamente')
+        } 
+    }
+
     async function gotoMenu() {
         history.push("/menu");
     } 
@@ -72,7 +105,10 @@ export default function Product(props) {
                             <Paper className="title-paper">
                                 <h1>
                                     { prod.name }
-                                    <Checkbox icon={ <FavoriteBorder /> } checkedIcon={ < Favorite /> } color="primary" />
+                                    <Button 
+                                        onClick={() => handleNewFavorite(userID, prod.id)}>
+                                        <FavoriteBorder />
+                                    </Button>
                                 </h1>
                                 <p>{ prod.category }</p>
                                 <p>{ prod.brand }</p>
