@@ -62,9 +62,9 @@ export default function NewProduct() {
             howToDiscard,
         };
         
-        if(name == '' || img == '' || description == '' || category == '' || 
-            brand == '' || curiosities == '' || specifications == '' || howToBuy == '' || 
-            howToPrepare == '' || howToStore == '' || howToDiscard == '' ) {
+        if(name === '' || img === '' || description === '' || category === '' || 
+            brand === '' || curiosities === '' || specifications === '' || howToBuy === '' || 
+            howToPrepare === '' || howToStore === '' || howToDiscard === '' ) {
             
             alert('Preencha os campos com valores válidos.');
         }  
@@ -111,11 +111,11 @@ export default function NewProduct() {
         
         console.log(data);
         
-        if(product_id == '' || portion == '' || calories == '' || carbohidrate == '' 
-            || protein == '' || totalFat == '' || saturatedFat == '' || transFat == '' 
-            || cholesterol == '' || dietaryFiber == '' || sodium == '' || vitamins == '' 
-            || calcium == '' || vitB1 == '' || vitB2 == '' || vitB6 == '' || iron == '' 
-            || niacin == '' || panthotenicAcid == '' || folicAcid == '' || sugar == '' 
+        if(product_id === '' || portion === '' || calories === '' || carbohidrate === '' 
+            || protein === '' || totalFat === '' || saturatedFat === '' || transFat === '' 
+            || cholesterol === '' || dietaryFiber === '' || sodium === '' || vitamins === '' 
+            || calcium === '' || vitB1 === '' || vitB2 === '' || vitB6 === '' || iron === '' 
+            || niacin === '' || panthotenicAcid === '' || folicAcid === '' || sugar === '' 
             || monounsaturatedFat == '') {
             
             alert('Preencha os campos com valores válidos.');

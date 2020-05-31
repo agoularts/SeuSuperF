@@ -24,10 +24,9 @@ export default function NewMarket() {
                 const token = await validaToken();
                 if(!token){
                     return history.push('/');
-                }
-            }
+                } 
+        }
             fetchData()
-
         },
         []
     )
@@ -44,13 +43,19 @@ export default function NewMarket() {
             phone,
             services,
         };
-
-        try {
-            const response = await api.post('market', data);
-            history.push('/mercados');
-            alert(`Bem-vindo, ${ response.data.name }!`);
-        } catch (err) {
+        
+        if(cnpj === '' || name === '' || address === '' || city === '' || uf === '' || phone === '' || services === ''){
+            alert('Preencha os campos com valores válidos.');
+        }  
+        
+        else{    
+            try {
+                const response = await api.post('market', data);
+                history.push('/mercados');
+                alert(`Bem-vindo, ${ response.data.name }!`);
+            } catch (err) {
             alert('Erro no cadastro, tente novamente.');
+            }
         }
     }
 
@@ -66,7 +71,6 @@ export default function NewMarket() {
                 <section className="logo">
                     <img src={ logoImg } alt="Seu Super" onClick={() => gotoMenu()} />
                     <h1>Cadastrar novo mercado</h1>
-                    <p>Faça seu cadastro, entre na plataforma.</p>
 
                 {/* Voltar */} 
                     <Link className="back-link" to="/mercados">

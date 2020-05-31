@@ -39,6 +39,7 @@ export default function Favorite(props) {
     async function gotoMenu() {
         history.push("/menu");
     } 
+    
     return (
         <div className="fav-container">
             <header>

@@ -24,13 +24,19 @@ export default function Register () {
             password,
         };
 
-        try {
-            const response = await api.post('user', data);
-            history.push('/');
-            alert(`Olá, ${ response.data.name }!`);
+        if(name === '' || email === '' || password === ''){
+            alert('Preencha os campos com valores válidos.');
+        }  
+        
+        else{ 
+            try {
+                const response = await api.post('user', data);
+                history.push('/');
+                alert(`Olá, ${ response.data.name }!`);
 
-        } catch (err) {
-            alert('Erro no cadastro, tente novamente.');
+            } catch (err) {
+                alert('Erro no cadastro, tente novamente.');
+            }
         }
     }
 
