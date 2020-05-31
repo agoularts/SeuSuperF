@@ -70,8 +70,7 @@ export default function Recycle(props) {
 
                         <section className="recycle-info">
                         <Paper className="recycle-img-paper">
-                            <img src={ recy.image } alt={ recy.name }/></Paper>
-                            {console.log(<img src={ recy.image } />)}
+                            <img src={ `/assets/recycle/${recy.image}.png` } alt={ recy.name }/></Paper>
                             
                             <Paper className="recycle-info-paper">
                                 <p> { recy.description } </p>

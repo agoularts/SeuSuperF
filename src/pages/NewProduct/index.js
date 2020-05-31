@@ -116,7 +116,7 @@ export default function NewProduct() {
             || cholesterol === '' || dietaryFiber === '' || sodium === '' || vitamins === '' 
             || calcium === '' || vitB1 === '' || vitB2 === '' || vitB6 === '' || iron === '' 
             || niacin === '' || panthotenicAcid === '' || folicAcid === '' || sugar === '' 
-            || monounsaturatedFat == '') {
+            || monounsaturatedFat === '') {
             
             alert('Preencha os campos com valores válidos.');
         }  
