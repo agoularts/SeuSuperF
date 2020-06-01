@@ -34,7 +34,10 @@ export default function Recycle(props) {
 
                 try {
                     const { id } = props.match.params
-                    const retornoApi = await api.get(`/recycle/${id}`)
+                    const retornoApi = await api.get(`/recycle/${id}`, {
+                        headers: { 
+                            auth: localStorage.userToken 
+                        }})
                     setRecycle(retornoApi.data)  
                     
                 } catch(err) {
