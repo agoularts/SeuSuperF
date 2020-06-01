@@ -69,7 +69,6 @@
 }
 
 .recycle-container .side-by-side {
-    display: flex;    
     justify-content: space-between;
     width:100%;
     max-width: 900px;

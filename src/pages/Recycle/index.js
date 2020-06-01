@@ -63,7 +63,7 @@ export default function Recycle(props) {
                 { recycle.map(recy => (
                     <div key={ recy.id }>
                         <section className="title-container">
-                            <Link className="back-link" to="/reciclagem/lista">
+                            <Link className="back-link" to="/reciclagem">
                                 { <FiArrowLeft size={ 25 } color="#000" /> }</Link>
 
                             <Paper className="title-paper">

@@ -16,9 +16,9 @@
 }
 
 .listRec-container .button {
-    height: auto;
+    height: 60px;
     width: 50%;
-    padding: 6px;
+    padding: 15px;
     line-height: 30px;
     border-radius: 8px;
     font-size: 20px;
