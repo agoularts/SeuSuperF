@@ -107,11 +107,13 @@ export default function Recycle(props) {
                                     <Typography className="panel-content">{ recy.disadvantage }</Typography>
                                     </ExpansionPanelDetails>
                                 </ExpansionPanel>
-
-                                <Paper className="curiosity">
-                                    <p><strong>Curiosidades:</strong> <br />{ recy.curiosities }</p> </Paper>
                             </div>   
-                        </div>
+
+                                <div className="curiosity">
+                                    <Paper className="curiosity-paper">
+                                        <p><strong>Curiosidades:</strong> <br />{ recy.curiosities }</p> </Paper>
+                                </div>
+                        </div>   
                     </div>
                 ))}
             </div>
