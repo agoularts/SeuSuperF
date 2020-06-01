@@ -70,10 +70,10 @@ export default function Market(props) {
                 {/* Botão de acesso a tela de cadastro de novo mercado */}
                 <Link className="button" to="/mercados/novo">Cadastrar novo mercado</ Link>
 
-                {/* Botão de logout */}
-                <button className="logout" onClick={ handleLogout } type="button">
-                <FiPower size={ 18 } color="#E02041"/>
-                </button>
+                <Link className="back-link" to="/menu">
+                { <FiArrowLeft size={ 25 } color="#E02041" /> }
+                    Voltar
+                </Link>
             </header>
 
             <h1>Mercados cadastrados</h1>
@@ -106,10 +106,7 @@ export default function Market(props) {
                 ))}
             </ul>
 
-            <Link className="back-link" to="/menu">
-                { <FiArrowLeft size={ 25 } color="#E02041" /> }
-                    Voltar
-            </Link>
+
 
         </div>
     )
