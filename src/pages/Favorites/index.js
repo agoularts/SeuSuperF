@@ -27,6 +27,7 @@ export default function Favorite(props) {
                     console.log(favorites)
                 } catch(err) {
                     console.log(userId)
+                    console.log(err)
                     alert('Deu ruim')
                 }
             }
