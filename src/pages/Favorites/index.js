@@ -25,10 +25,8 @@ export default function Favorite(props) {
                     const retornoApi = await api.get('/favorite', {headers: { auth: localStorage.userToken }} )
                     setFavorites(retornoApi.data)
                     console.log(favorites)
-                
                 } catch(err) {
                     console.log(userId)
-
                     alert('Deu ruim')
                 }
             }
