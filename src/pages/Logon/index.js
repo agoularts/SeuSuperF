@@ -24,6 +24,7 @@ export default function Logon() {
             const response = await api.post('sessions', { email, password });
 
             localStorage.setItem('userEmail', email);
+            localStorage.setItem('userID', response.data.id);
             localStorage.setItem('userName', response.data.name);
             localStorage.setItem('userToken', response.data.token);
 
