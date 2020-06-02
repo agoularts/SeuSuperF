@@ -32,11 +32,6 @@ export default function Menu() {
             <section> 
                 <img src={ logo } alt="Seu Super" />
 
-            {/*instancia a Barra de pesquisa*/}
-                <input type="search" placeholder="Buscar">
-
-                </input>
-
             {/*instancia os botoes do Menu*/}
                     <Link className="button" to="/mercados">
                         { < MdShoppingCart size={ 30 } color="#fff" /> }
