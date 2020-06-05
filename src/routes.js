@@ -2,18 +2,18 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Admin from './pages/Admin';
-/*import ListProduct from './pages/AdminListProduct';
+/import ListProduct from './pages / AdminListProduct';
 import ListMarket from './pages/AdminListMarket';
 import ListRecycle from './pages/AdminListRecycle';
 import DeleteMarket from './pages/AdminDelMarket';
 import DeleteProduct from './pages/AdminDelProduct';
-import DeleteRecycle from './pages/AdminDelRecycle';*/
+import DeleteRecycle from './pages/AdminDelRecycle';
 import NewMarket from './pages/AdminNewMarket';
 import NewProduct from './pages/AdminNewProduct';
 import NewRecycle from './pages/AdminNewRecycle';
-/*import UpdateMarket from './pages/AdminUpdateMarket';
-import UpdateProduct from './pages/AdminUpdateProduct';
-import UpdateRecycle from './pages/AdminUpdateRecycle';*/
+import UpdateMarket from './pages/AdminUpMarket';
+import UpdateProduct from './pages/AdminUpProduct';
+import UpdateRecycle from './pages/AdminUpRecycle';
 
 import Favorite from './pages/Favorites';
 import Logon from './pages/Logon';
@@ -51,22 +51,22 @@ export default function Routes() {
                 <PrivateRoutes path="/mercados" exact component={Market} />
                 {/* opções admin: Criar, deletar, Listar/Editar */}
                 <PrivateRoutes path="/mercados/novo" exact component={NewMarket} />
-                {/*<PrivateRoutes path="/mercados/listar" exact component={ListMarket} />
-                <PrivateRoutes path="/mercados/deletar" exact component={DeleteMarket} /> */}
+                <PrivateRoutes path="/mercados/listar" exact component={ListMarket} />
+                <PrivateRoutes path="/mercados/deletar" exact component={DeleteMarket} />
 
                 {/* lista as opções de reciclagem para o usuário e mostra as infos do item selecionado*/}
                 <PrivateRoutes path="/reciclagem" exact component={SearchRecycle} />
                 {/* opções admin: Criar, deletar, Listar/Editar */}
                 <PrivateRoutes path="/reciclagem/novo" exact component={NewRecycle} />
-                {/*<PrivateRoutes path="/reciclagem/deletar" exact component={DeleteRecycle} />
-                <PrivateRoutes path="/reciclagem/listar" exact component={ListRecycle} />*/}
-                
+                <PrivateRoutes path="/reciclagem/deletar" exact component={DeleteRecycle} />
+                <PrivateRoutes path="/reciclagem/listar" exact component={ListRecycle} />
+
                 {/* lista as opções de produto para o usuário e mostra as infos do item selecionado*/}
                 <PrivateRoutes path="/produto" exact component={SearchProd} />
                 {/* opções produtos: Criar, deletar, Listar/Editar */}
                 <PrivateRoutes path="/produto/novo" exact component={NewProduct} />
-                {/*<PrivateRoutes path="/produto/deletar" exact component={DeleteProduct} />
-                <PrivateRoutes path="/produto/listar" exact component={ListProduct} />*/}
+                <PrivateRoutes path="/produto/deletar" exact component={DeleteProduct} />
+                <PrivateRoutes path="/produto/listar" exact component={ListProduct} />
 
                 {/* mostra as infos do usuário */}
                 <PrivateRoutes path="/profile" exact component={Profile} />
@@ -77,10 +77,10 @@ export default function Routes() {
 
 
 
-                {/*<PrivateRoutes exact path="/reciclagem/editar/:id" exact component={UpdateRecycle} />
+                <PrivateRoutes exact path="/reciclagem/editar/:id" exact component={UpdateRecycle} />
                 <PrivateRoutes exact path="/mercados/editar/:cnpj" exact component={UpdateMarket} />
-            <PrivateRoutes exact path="/produto/editar/:id" exact component={UpdateProduct} />*/}
-                
+                <PrivateRoutes exact path="/produto/editar/:id" exact component={UpdateProduct} />
+
                 <PrivateRoutes exact path="/reciclagem/:id" exact component={Recycle} />
                 <PrivateRoutes exact path="/produto/:id" component={Product} />
 
