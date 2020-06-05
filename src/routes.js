@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Admin from './pages/Admin';
-import ListProduct from './pages / AdminListProduct';
+import ListProduct from './pages/AdminListProduct';
 import ListMarket from './pages/AdminListMarket';
 import ListRecycle from './pages/AdminListRecycle';
 import DeleteMarket from './pages/AdminDelMarket';
@@ -53,6 +53,7 @@ export default function Routes() {
                 <PrivateRoutes path="/mercados/novo" exact component={NewMarket} />
                 <PrivateRoutes path="/mercados/listar" exact component={ListMarket} />
                 <PrivateRoutes path="/mercados/deletar" exact component={DeleteMarket} />
+                <PrivateRoutes exact path="/mercados/editar/:cnpj" exact component={UpdateMarket} />
 
                 {/* lista as opções de reciclagem para o usuário e mostra as infos do item selecionado*/}
                 <PrivateRoutes path="/reciclagem" exact component={SearchRecycle} />
@@ -60,6 +61,8 @@ export default function Routes() {
                 <PrivateRoutes path="/reciclagem/novo" exact component={NewRecycle} />
                 <PrivateRoutes path="/reciclagem/deletar" exact component={DeleteRecycle} />
                 <PrivateRoutes path="/reciclagem/listar" exact component={ListRecycle} />
+                <PrivateRoutes exact path="/reciclagem/editar/:id" exact component={UpdateRecycle} />
+                <PrivateRoutes exact path="/reciclagem/:id" exact component={Recycle} />
 
                 {/* lista as opções de produto para o usuário e mostra as infos do item selecionado*/}
                 <PrivateRoutes path="/produto" exact component={SearchProd} />
@@ -67,6 +70,8 @@ export default function Routes() {
                 <PrivateRoutes path="/produto/novo" exact component={NewProduct} />
                 <PrivateRoutes path="/produto/deletar" exact component={DeleteProduct} />
                 <PrivateRoutes path="/produto/listar" exact component={ListProduct} />
+                <PrivateRoutes exact path="/produto/editar/:id" exact component={UpdateProduct} />
+                <PrivateRoutes exact path="/produto/:id" component={Product} />
 
                 {/* mostra as infos do usuário */}
                 <PrivateRoutes path="/profile" exact component={Profile} />
@@ -74,15 +79,6 @@ export default function Routes() {
                 {/* FUNCIONALIDADES DO ADMINISTRADOR */}
                 {/* menu principal */}
                 <PrivateRoutes path="/admin" exact component={Admin} />
-
-
-
-                <PrivateRoutes exact path="/reciclagem/editar/:id" exact component={UpdateRecycle} />
-                <PrivateRoutes exact path="/mercados/editar/:cnpj" exact component={UpdateMarket} />
-                <PrivateRoutes exact path="/produto/editar/:id" exact component={UpdateProduct} />
-
-                <PrivateRoutes exact path="/reciclagem/:id" exact component={Recycle} />
-                <PrivateRoutes exact path="/produto/:id" component={Product} />
 
                 <Route path="*" component={Erro} />
             </Switch>
