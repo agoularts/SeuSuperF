@@ -2,18 +2,18 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Admin from './pages/Admin';
-import ListProduct from './pages/AdminListProduct';
+/*import ListProduct from './pages/AdminListProduct';
 import ListMarket from './pages/AdminListMarket';
 import ListRecycle from './pages/AdminListRecycle';
 import DeleteMarket from './pages/AdminDelMarket';
 import DeleteProduct from './pages/AdminDelProduct';
-import DeleteRecycle from './pages/AdminDelRecycle';
+import DeleteRecycle from './pages/AdminDelRecycle';*/
 import NewMarket from './pages/AdminNewMarket';
 import NewProduct from './pages/AdminNewProduct';
 import NewRecycle from './pages/AdminNewRecycle';
-import UpdateMarket from './pages/AdminUpdateMarket';
+/*import UpdateMarket from './pages/AdminUpdateMarket';
 import UpdateProduct from './pages/AdminUpdateProduct';
-import UpdateRecycle from './pages/AdminUpdateRecycle';
+import UpdateRecycle from './pages/AdminUpdateRecycle';*/
 
 import Favorite from './pages/Favorites';
 import Logon from './pages/Logon';
@@ -77,12 +77,11 @@ export default function Routes() {
 
 
 
-                <PrivateRoutes exact path="/reciclagem/editar/:id" exact component={UpdateRecycle} />
-                <PrivateRoutes exact path="/reciclagem/:id" exact component={Recycle} />
-
+                {/*<PrivateRoutes exact path="/reciclagem/editar/:id" exact component={UpdateRecycle} />
                 <PrivateRoutes exact path="/mercados/editar/:cnpj" exact component={UpdateMarket} />
-
-                <PrivateRoutes exact path="/produto/editar/:id" exact component={UpdateProduct} />
+            <PrivateRoutes exact path="/produto/editar/:id" exact component={UpdateProduct} />*/}
+                
+                <PrivateRoutes exact path="/reciclagem/:id" exact component={Recycle} />
                 <PrivateRoutes exact path="/produto/:id" component={Product} />
 
                 <Route path="*" component={Erro} />
