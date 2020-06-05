@@ -1,12 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
+import {  useHistory } from 'react-router-dom';
 
-import api from '../../services/api'
-import logoImg from '../../assets/logo.svg'
+import './styles.css';
+import { validaToken } from '../../services/auth';
+import logoImg from '../../assets/logo.svg';
 import SimpleDialog from '../../components/Dialog/Dialog'
 
 export default function Admin() {
     const [open, setOpen] = useState(false)
     const [link, setLink] = useState({})
+    const history = useHistory();
 
     useEffect(
         () => {
