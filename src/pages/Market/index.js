@@ -34,27 +34,6 @@ export default function Market(props) {
         },
         []
     )
-          
-    function handleLogout() {
-        localStorage.clear();
-
-        history.push('/');
-    }
-
-    async function handleDeleteMarket(cnpj) {
-        try {
-            await api.delete(`market/${cnpj}`, {
-                headers: { 
-                    auth: localStorage.userToken,
-                 }
-            }); 
-                
-                setMarkets(markets.filter(market => market.cnpj !== cnpj));
-        } catch (err) {
-            console.log(cnpj)
-            alert('Erro ao deletar o caso, tente novamente')
-        } 
-    }
  
     async function gotoMenu() {
         history.push("/menu");
@@ -66,14 +45,6 @@ export default function Market(props) {
             <header>
                 <img src={ logoImg } alt="Seu Super" onClick={() => gotoMenu()} />
                 <span>Bem vindo { userName }!</span>
-
-                {/* Botão de acesso a tela de cadastro de novo mercado */}
-                <Link className="button" to="/mercados/novo">Cadastrar novo mercado</ Link>
-
-                <Link className="back-link" to="/menu">
-                { <FiArrowLeft size={ 25 } color="#E02041" /> }
-                    Voltar
-                </Link>
             </header>
 
             <h1>Mercados cadastrados</h1>
@@ -92,16 +63,7 @@ export default function Market(props) {
                         <p>{ market.phone }</p>
 
                         <strong>SERVIÇOS DISPONÍVEIS:</strong>
-                        <p>{ market.services }</p>                      
-                        
-                        {/* Coverte valores para real. NÃO EXCLUIR! Será usado posteriormente 
-                        <p>{ Intl.NumberFormat('pt-BR', {style: 'currency', currency:'BRL'}).format(incident.value) }</p> */}
-
-                        {/* Botao para excluir mercados. Será removido posteriormente */}
-                        <button onClick={ () => handleDeleteMarket(market.cnpj) } type="button">
-                        <FiTrash2 size={ 20 } color="#a8a8b3"/>
-                        </button>
-
+                        <p>{ market.services }</p>                     
                     </li>
                 ))}
             </ul>
