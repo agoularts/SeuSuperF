@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Admin from './pages/Admin';
-/import ListProduct from './pages / AdminListProduct';
+import ListProduct from './pages / AdminListProduct';
 import ListMarket from './pages/AdminListMarket';
 import ListRecycle from './pages/AdminListRecycle';
 import DeleteMarket from './pages/AdminDelMarket';
