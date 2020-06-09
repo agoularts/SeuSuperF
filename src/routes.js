@@ -76,8 +76,7 @@ export default function Routes() {
                 {/* mostra as infos do usuário */}
                 <PrivateRoutes path="/profile" exact component={Profile} />
 
-                {/* FUNCIONALIDADES DO ADMINISTRADOR */}
-                {/* menu principal */}
+                {/* menu admin */}
                 <PrivateRoutes path="/admin" exact component={Admin} />
 
                 <Route path="*" component={Erro} />

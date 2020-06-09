@@ -11,7 +11,7 @@ export default function NewRecycle() {
     const [name, setName] = useState('');
     const [img, setImg] = useState('');
     const [description, setDescription] = useState('');
-    //const [category, setCategory] = useState('');
+    const [category, setCategory] = useState('');
     const [curiosities, setCuriosities] = useState('');
     const [advantages, setAdvantages] = useState('');
     const [disavantages, setDisadvantages] = useState('');
@@ -38,13 +38,13 @@ export default function NewRecycle() {
             name,
             img,
             description,
-            //category,
+            category,
             curiosities,
             advantages,
             disavantages
         };
         
-        if(name === '' || img === '' || description === '' || //category === '' || 
+        if(name === '' || img === '' || description === '' || category === '' || 
             curiosities === '' || advantages === '' || disavantages === '' ) {
             
             alert('Preencha os campos com valores válidos.');
@@ -94,13 +94,13 @@ export default function NewRecycle() {
                             value={ img }
                             onChange={ e=> setImg(e.target.value) }
                         /> 
-                        {/*
+                        
                         <input className="text"
                             placeholder="Categoria"
                             value={ category }
                             onChange={ e=> setCategory(e.target.value) }
                         />   
-                        */}
+                    
                        
                         <textarea className="text"
                             placeholder="Descrição"

@@ -28,7 +28,11 @@ export default function Logon() {
             localStorage.setItem('userName', response.data.name);
             localStorage.setItem('userToken', response.data.token);
 
-            history.push('/menu');
+            
+            if ('userAdmin')
+                history.push('/admin');
+            else
+                history.push('/menu');
             
         } catch (err) {
             alert('Falha no login, tente novamente.');
