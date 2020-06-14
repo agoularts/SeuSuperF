@@ -11,9 +11,9 @@ import DeleteRecycle from './pages/AdminDelRecycle';
 import NewMarket from './pages/AdminNewMarket';
 import NewProduct from './pages/AdminNewProduct';
 import NewRecycle from './pages/AdminNewRecycle';
-import UpdateMarket from './pages/AdminUpdateMarket';
-import UpdateProduct from './pages/AdminUpdateProduct';
-import UpdateRecycle from './pages/AdminUpdateRecycle';
+import UpdateMarket from './pages/AdminUpMarket';
+import UpdateProduct from './pages/AdminUpProduct';
+import UpdateRecycle from './pages/AdminUpRecycle';
 
 import Favorite from './pages/Favorites';
 import Logon from './pages/Logon';
