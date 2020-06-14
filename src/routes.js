@@ -22,7 +22,6 @@ import Menu from './pages/Menu';
 import Packing from './pages/Packing';
 import Product from './pages/Product';
 import Profile from './pages/Profile';
-import Recycle from './pages/Recycle';
 import Register from './pages/Register';
 import SearchPacking from './pages/SearchPacking';
 import SearchProd from './pages/SearchProd';
