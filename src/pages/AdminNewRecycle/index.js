@@ -14,7 +14,7 @@ export default function NewRecycle() {
     const [category, setCategory] = useState('');
     const [curiosities, setCuriosities] = useState('');
     const [advantages, setAdvantages] = useState('');
-    const [disavantages, setDisadvantages] = useState('');
+    const [disadvantages, setDisadvantages] = useState('');
     
     const history = useHistory();
     
@@ -41,11 +41,11 @@ export default function NewRecycle() {
             category,
             curiosities,
             advantages,
-            disavantages
+            disadvantages
         };
         
-        if(name === '' || img === '' || description === '' || category === '' || 
-            curiosities === '' || advantages === '' || disavantages === '' ) {
+        if(name === '' || img === '' || description === '' || //category === '' || 
+            curiosities === '' || advantages === '' || disadvantages === '' ) {
             
             alert('Preencha os campos com valores válidos.');
         }  
@@ -62,15 +62,15 @@ export default function NewRecycle() {
         }
     }
 
-    async function gotoMenu() {
-        history.push("/menu");
+    async function gotoAdmin() {
+        history.push("/admin");
     } 
 
     return (
         <div className="newProduct-container">
                 {/* Logo e texto */}
                 <section className="logo">
-                    <img src={ logoImg } alt="Seu Super" /> {/*onClick={() => gotoMenu()} */}
+                    <img src={ logoImg } alt="Seu Super" onClick={() => gotoAdmin()} />
                     <h1>Cadastrar novo item em Reciclagem</h1>
 
                 {/* Voltar */} 
@@ -100,7 +100,6 @@ export default function NewRecycle() {
                             value={ category }
                             onChange={ e=> setCategory(e.target.value) }
                         />   
-                    
                        
                         <textarea className="text"
                             placeholder="Descrição"
@@ -116,7 +115,7 @@ export default function NewRecycle() {
 
                         <textarea className="text"
                             placeholder="Desvantagens"
-                            value={ disavantages }
+                            value={ disadvantages }
                             onChange={ e=> setDisadvantages(e.target.value) }
                         />
 

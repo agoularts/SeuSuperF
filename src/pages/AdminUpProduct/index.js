@@ -186,6 +186,11 @@ export default function UpdateProduct(props) {
                 <header className="logo">
                     <img src={logoImg} alt="Seu Super" onClick={() => gotoAdmin()} />
                     <h1>Alterar cadastro de produto</h1>
+                                    
+                    <Link className="back-link" to="/admin">
+                    {<FiArrowLeft size={25} color="#E02041" />}
+                    Voltar
+                </Link>
                 </header>
 
                 <div>

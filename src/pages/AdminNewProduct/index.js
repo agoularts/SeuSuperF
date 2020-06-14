@@ -5,7 +5,6 @@ import { FiArrowLeft } from 'react-icons/fi';
 import './styles.css';
 import api from '../../services/api';
 import { validaToken } from '../../services/auth';
-
 import logoImg from '../../assets/logo.svg';
 
 export default function NewProduct() {
@@ -44,6 +43,19 @@ export default function NewProduct() {
     const [monounsaturatedFat, setMonounsaturatedFat] = useState('');
 
     const history = useHistory();
+    
+    useEffect(
+        () => {
+            async function fetchData() {
+                const token = await validaToken();
+                if(!token){
+                    return history.push('/');
+                }
+            }
+            fetchData()
+        },
+        []
+    )
 
     async function handleNewProduct(e) {
         e.preventDefault();
@@ -123,7 +135,7 @@ export default function NewProduct() {
         else{   
             try {
                 const response = await api.post('nutrition', data);
-                history.push('/produto');
+                history.push('/admin');
                 alert(`Informações nutricionais do produto ${ response.data.product_id } cadastradas com sucesso!`);
             } catch (err) {
                 alert('Erro no cadastro, tente novamente.');
@@ -131,20 +143,19 @@ export default function NewProduct() {
         }
     }
 
-
-    async function gotoMenu() {
-        history.push("/menu");
+   async function gotoAdmin() {
+        history.push("/admin");
     } 
 
     return (
         <div className="newProduct-container">
                 {/* Logo e texto */}
                 <section className="logo">
-                    <img src={ logoImg } alt="Seu Super" onClick={() => gotoMenu()} />
+                    <img src={ logoImg } alt="Seu Super" onClick={() => gotoAdmin()} />
                     <h1>Cadastrar novo produto</h1>
 
                 {/* Voltar */} 
-                    <Link className="back-link" to="/menu">
+                    <Link className="back-link" to="/admin">
                         <FiArrowLeft size={ 16 } color="#E02041" />
                             Voltar
                     </Link>

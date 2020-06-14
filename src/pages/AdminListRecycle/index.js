@@ -49,6 +49,11 @@ export default function ListMarket(props) {
             <header>
                 <img src={ logoImg } alt="Seu Super" onClick={() => gotoAdmin()} />
                 <span>Bem vindo { userName }!</span>
+                
+                <Link className="back-link" to="/admin">
+                    {<FiArrowLeft size={25} color="#E02041" />}
+                    Voltar
+                </Link>
             </header>
 
             <h1>Editar Mercados</h1>
