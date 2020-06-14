@@ -8,14 +8,15 @@ import { validaToken } from '../../services/auth';
 import logoImg from '../../assets/logo.svg';
 
 export default function UpdateRecycle(props) {
-    const [markets, setMarkets] = useState([]);
-    const [cnpj, setCnpj] = useState('');
+    const [recycle, setRecycle] = useState([]);
+    const [id, setId] = useState('');
     const [name, setName] = useState('');
-    const [address, setAddress] = useState('');
-    const [city, setCity] = useState('');
-    const [uf, setUf] = useState('');
-    const [phone, setPhone] = useState('');
-    const [services, setServices] = useState('');
+    const [img, setImg] = useState('');
+    const [description, setDescription] = useState('');
+    const [category, setCategory] = useState('');
+    const [curiosities, setCuriosities] = useState('');
+    const [advantages, setAdvantages] = useState('');
+    const [disadvantages, setDisadvantages] = useState('');
 
     const history = useHistory();
 
@@ -36,12 +37,13 @@ export default function UpdateRecycle(props) {
                             }
                         })
                         setName(retornoApi.data[0].name)
-                        setCnpj(retornoApi.data[0].cnpj)
-                        setAddress(retornoApi.data[0].address)
-                        setCity(retornoApi.data[0].city)
-                        setUf(retornoApi.data[0].uf)
-                        setPhone(retornoApi.data[0].phone)
-                        setServices(retornoApi.data[0].services)
+                        setId(retornoApi.data[0].id)
+                        setImg(retornoApi.data[0].img)
+                        setDescription(retornoApi.data[0].description)
+                        setCategory(retornoApi.data[0].category)
+                        setCuriosities(retornoApi.data[0].curiosities)
+                        setAdvantages(retornoApi.data[0].advantages)
+                        setDisadvantages(retornoApi.data[0].disadvantages)
 
                 } catch (err) {
                     console.log(err)
@@ -53,34 +55,32 @@ export default function UpdateRecycle(props) {
         [props.match.params]
     )
 
-    async function handleUpdateMarket(cnpj) {
+    async function handleUpdateRecycle(id) {
         const data = {
-            cnpj, name, address, city, uf, phone, services,
+            name, img, description, category, curiosities, advantages, disadvantages
         };
 
         try {
-            cnpj = data.cnpj
-            console.log('hello crl')
-            const response = await api.put(`/updateMarket/${cnpj}`, data);
+            id = data.id
+            const response = await api.put(`/updateRecycle/${id}`, data);
             
-            setCnpj(response.data.cnpj)
-            setName(response.data.name)
-            setAddress(response.data.address)
-            setCity(response.data.city)
-            setUf(response.data.uf)
-            setPhone(response.data.phone)
-            setServices(response.data.services)
-            console.log(response.data)
+            setName(response.data[0].name)
+            setId(response.data[0].id)
+            setImg(response.data[0].img)
+            setDescription(response.data[0].description)
+            setCategory(response.data[0].category)
+            setCuriosities(response.data[0].curiosities)
+            setAdvantages(response.data[0].advantages)
+            setDisadvantages(response.data[0].disadvantages)
 
             alert(`${response.data.name} alterado com sucesso!`);
         } catch (err) {
-            console.log(markets)
             alert('Erro na alteração do cadastro, tente novamente.');
         }
     }
 
-    async function gotoMenu() {
-        history.push("/menu");
+    async function gotoAdmin() {
+        history.push("/admin");
     }
 
     return (
@@ -89,11 +89,11 @@ export default function UpdateRecycle(props) {
 
                 {/* Logo e texto */}
                 <section className="logo">
-                    <img src={logoImg} alt="Seu Super" onClick={() => gotoMenu()} />
+                    <img src={logoImg} alt="Seu Super" onClick={() => gotoAdmin()} />
                     <h1>Alterar cadastro de reciclagem</h1>
 
                     {/* Voltar */}
-                    <Link className="back-link" to="/mercados">
+                    <Link className="back-link" to="/admin">
                         <FiArrowLeft size={16} color="#E02041" />
                             Voltar
                     </Link>
@@ -101,42 +101,48 @@ export default function UpdateRecycle(props) {
 
                 <div>{/* inputs */}
 
-                    <form onSubmit={ () => handleUpdateMarket(cnpj)}>
-                        <input
+                    <form onSubmit={ () => handleUpdateRecycle(id)}>
+                    <input 
                             placeholder={ name }
                             value={ name }
-                            onChange={ e => setName(e.target.value) }
+                            onChange={ e=> setName(e.target.value) }
+                        />
+                       
+                        <input 
+                            placeholder={ img }
+                            value={ img }
+                            onChange={ e=> setImg(e.target.value) }
+                        /> 
+                        
+                        <input className="text"
+                            placeholder={ category }
+                            value={ category }
+                            onChange={ e=> setCategory(e.target.value) }
+                        />   
+                       
+                        <textarea className="text"
+                            placeholder={ description }
+                            value={ description }
+                            onChange={e => setDescription(e.target.value)}
+                        /> 
+
+                        <textarea className="text"
+                            placeholder={ advantages }
+                            value={ advantages }
+                            onChange={ e=> setAdvantages(e.target.value) }
                         />
 
-                        <input
-                            value={ cnpj }
-                            onChange={e => setCnpj(e.target.value)}
+                        <textarea className="text"
+                            placeholder={ disadvantages }
+                            value={ disadvantages }
+                            onChange={ e=> setDisadvantages(e.target.value) }
                         />
 
-                        <input
-                            value={ address }
-                            onChange={e => setAddress(e.target.value)}
-                        />
-
-                        <input
-                            value={ city }
-                            onChange={e => setCity(e.target.value)}
-                        />
-
-                        <input
-                            value={ uf }
-                            onChange={e => setUf(e.target.value)}
-                        />
-
-                        <input
-                            value={ phone }
-                            onChange={e => setPhone(e.target.value)}
-                        />
-
-                        <input
-                            value={ services }
-                            onChange={e => setServices(e.target.value)}
-                        />
+                        <textarea className="text"
+                            placeholder={ curiosities }
+                            value={ curiosities }
+                            onChange={ e=> setCuriosities(e.target.value) }
+                        /> 
 
                         <button className="button" type="submit">Salvar alterações</button>
                     </form>
