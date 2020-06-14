@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
-import { FiTrash2 } from 'react-icons/fi';
+import { useHistory, Link } from 'react-router-dom';
+import { FiArrowLeft, FiTrash2 } from 'react-icons/fi';
 
 import api from '../../services/api';
 import { validaToken } from '../../services/auth';
@@ -13,28 +13,57 @@ export default function DeleteProduct(props) {
     const [nutrition, setNutrition] = useState([]);
     const history = useHistory();
 
+
     // usuario permitido para alteração de mercado
     useEffect(
         () => {
             async function fetch() {
                 const token = await validaToken();
-                if(!token){
+                if (!token) {
                     return history.push('/admin');
                 }
-                
+
                 try {
                     const retornoApi = await api.get('productEdit', { // busca os itens em /productEdit
                         headers: {                                    //valida o token do usuário e autoriza acesso à API
-                            auth: localStorage.userToken 
-                        } } )
+                            auth: localStorage.userToken
+                        }
+                    })
                     setProduct(retornoApi.data) // seta as infos encontradas em /productEdit em product
-                } catch(err) {
+                } catch (err) {
                     alert('Ocorreu algum erro tente novamente mais tarde!')
                 }
-            }            
+            }
             fetch()
         },
         []
+    )
+
+    useEffect(
+        () => {
+            async function fetchData() {
+                const token = await validaToken();
+                if (!token) {
+                    return history.push('/');
+                }
+
+                try {
+                    const retornoApi = await api.get('/nutrition',
+                        {
+                            headers: {
+                                auth: localStorage.userToken
+                            }
+                        })
+                    setNutrition(retornoApi.data)
+
+                } catch (error) {
+                    alert('Erro ao consultar a API')
+                }
+            }
+
+            fetchData()
+        },
+        [props.match.params]
     )
 
     async function handleDeleteProduct(id) {
@@ -46,9 +75,12 @@ export default function DeleteProduct(props) {
             });
 
             setProduct(product.filter(prod => prod.id !== id));
+
+            //handleDeleteNutrition(id)
+
         } catch (err) {
             console.log(id)
-            alert('Erro ao deletar o caso, tente novamente')
+            alert('Erro ao deletar o produto, tente novamente')
         }
     }
 
@@ -61,9 +93,14 @@ export default function DeleteProduct(props) {
             });
 
             setNutrition(nutrition.filter(nutri => nutri.product_id !== product_id));
+
+            handleDeleteProduct(product.id)
+
+            alert('Produto deletado com sucesso')
+
         } catch (err) {
             console.log(product_id, err)
-            alert('Erro ao deletar o caso, tente novamente')
+            alert('Erro ao deletar o nutri, tente novamente')
         }
     }
 
@@ -71,12 +108,16 @@ export default function DeleteProduct(props) {
         history.push("/admin");
     }
 
-
     return (
         <div className="delete-prod-container">
             <header>
                 <img src={logoImg} alt="Seu Super" onClick={() => gotoAdmin()} />
                 <span>Bem vindo Admin!</span>
+
+                <Link className="back-link" to="/admin">
+                    {<FiArrowLeft size={25} color="#E02041" />}
+                        Voltar
+                </Link>
             </header>
 
             <h1>Produtos cadastrados</h1>
@@ -86,10 +127,10 @@ export default function DeleteProduct(props) {
                         <p>{prod.name}</p>
                         <p>{prod.category}</p>
                         <p>{prod.brand}</p>
+                        <p>{prod.description}</p>
 
                         <button className="edit-button"
-                            onClick={() => handleDeleteProduct(prod.id), 
-                                    () => handleDeleteNutrition(prod.id)} type="button">
+                            onClick={() => handleDeleteNutrition(prod.id)}>
                             <FiTrash2 size={20} color="#a8a8b3" />
                         </button>
                     </li>

@@ -1,28 +1,52 @@
 import React, { useState, useEffect } from 'react';
-import {  useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import { FiPower } from 'react-icons/fi';
 
-import './styles.css';
+
+import api from '../../services/api';
 import { validaToken } from '../../services/auth';
-import logoImg from '../../assets/logo.svg';
+import './styles.css';
 import SimpleDialog from '../../components/Dialog/Dialog'
+import logoImg from '../../assets/logo.svg'
 
 export default function Admin() {
     const [open, setOpen] = useState(false)
+    const [user, setUser] = useState()
     const [link, setLink] = useState({})
     const history = useHistory();
+    const userID = localStorage.getItem('userID');
 
+    
     useEffect(
         () => {
-            async function fetch() {
-                const token = await validaToken();
-                if(!token){
-                    return history.push('/');
+            async function fetchData() {
+                try{
+                    const retornoApi = await api.get(`/userID/${userID}`, {
+                        headers: {
+                            auth: localStorage.userToken
+                        }
+                    })
+
+                    setUser(retornoApi.data)
+
+                    if(!retornoApi.data[0].admin)
+                        return history.push('/');
+
+                } catch (err) {
+                    console.log(err)
+                    alert('Erro na API')
                 }
-            }            
-            fetch()
+            }
+            fetchData()
         },
         []
     )
+
+    function handleLogout() {
+        localStorage.clear();
+
+        history.push('/');
+    }
 
     async function handleProduct(){
         setOpen(true)
@@ -41,9 +65,14 @@ export default function Admin() {
 
     return(
         <div className="admin-content">
+            
             <header>
-                <img src={ logoImg } alt="Seu Super" />
+                <img src={logoImg} alt="Seu Super" />
                 <span>Bem vindo Admin!</span>
+
+                <button className="logout" onClick={ handleLogout } type="button">
+                <FiPower size={ 18 } color="#E02041"/>
+                </button>
             </header>
 
             <div>

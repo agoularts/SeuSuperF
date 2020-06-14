@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiEdit, FiTrash2, FiArrowLeft } from 'react-icons/fi';
+import { FiTrash2, FiArrowLeft } from 'react-icons/fi';
 
 import api from '../../services/api';
 import { validaToken } from '../../services/auth';
@@ -59,6 +59,11 @@ export default function DeleteRecycle(props) {
             <header>
                 <img src={ logoImg } alt="Seu Super" onClick={() => gotoAdmin()} />
                 <span>Bem vindo Admin!</span>
+            
+                <Link className="back-link" to="/admin">
+                    {<FiArrowLeft size={25} color="#E02041" />}
+                    Voltar
+                </Link>
             </header>
 
             <h1>Itens de reciclagem cadastrados</h1>

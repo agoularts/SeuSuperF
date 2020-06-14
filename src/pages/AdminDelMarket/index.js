@@ -60,6 +60,12 @@ export default function DeleteMarket(props) {
             <header>
                 <img src={ logoImg } alt="Seu Super" onClick={() => gotoAdmin()} />
                 <span>Bem vindo Admin!</span>
+                
+                <Link className="back-link" to="/menu">
+                    { <FiArrowLeft size={ 25 } color="#E02041" /> }
+                        Voltar
+                </Link>
+
             </header>
 
             <h1>Deletar Mercados</h1>
@@ -88,8 +94,6 @@ export default function DeleteMarket(props) {
                     </li>
                 ))}
             </ul>
-
-
 
         </div>
     )
