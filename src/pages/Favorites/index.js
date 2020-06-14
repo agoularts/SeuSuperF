@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import {  useHistory } from 'react-router-dom';
+import {  useHistory, Link } from 'react-router-dom';
+import {FiArrowLeft} from 'react-icons/fi'
 
 import { validaToken } from '../../services/auth';
 import api from '../../services/api';
@@ -11,7 +12,6 @@ export default function Favorite(props) {
     const history = useHistory();
 
     const userId = localStorage.getItem('userID');
-    console.log(favorites)
     
     useEffect(
         () => {
@@ -22,11 +22,11 @@ export default function Favorite(props) {
                 }
                 
                 try {
-                    const retornoApi = await api.get('/favorite', {headers: { auth: localStorage.userToken }} )
+                    const id = localStorage.getItem('userID')
+                    const retornoApi = await api.get(`favorite/${id}`, {headers: { auth: localStorage.userToken }} )
                     setFavorites(retornoApi.data)
-                    console.log(favorites)
+                
                 } catch(err) {
-                    console.log(userId)
                     console.log(err)
                     alert('Deu ruim')
                 }
@@ -48,6 +48,11 @@ export default function Favorite(props) {
             <header>
                 <img src={ logoImg } alt="Seu Super" onClick={() => gotoMenu()}/>
                 <span>Seus Favoritos</span> 
+
+                <Link className="back-link" to="/menu">
+                    {<FiArrowLeft size={25} color="#E02041" />}
+                    Voltar
+                </Link>
             </header>
 
             <div>
@@ -55,7 +60,7 @@ export default function Favorite(props) {
                 <div key={ fav.user_id }>
                 
                     <button className="button" onClick={() => gotoProduct(fav.product_id) }>
-                        { fav.id } - { fav.name }
+                        { fav.name }
                     </button>
                 </div>
             ))}
