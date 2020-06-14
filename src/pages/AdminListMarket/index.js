@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiEdit } from 'react-icons/fi';
+import { FiEdit, FiArrowLeft } from 'react-icons/fi';
 
 import api from '../../services/api';
 import { validaToken } from '../../services/auth';
