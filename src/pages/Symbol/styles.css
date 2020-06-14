@@ -1,0 +1,104 @@
+.recycle-container {
+    width:100%;
+    max-width: 900px;
+    padding: 0 20px;
+    border: 1px solid #dcdce6;
+    margin: 25px auto;
+}
+
+/* logo  */
+.recycle-container header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.recycle-container header img {
+    margin-left: 50%;
+    height:50px;
+}
+
+/* barra com nome do produto e link voltar para os produtos */
+.recycle-container .title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 32px auto;
+}
+
+.recycle-container .title-paper {
+    background: #90EE90 ;
+    border-radius: 30px;
+    padding: 15px;
+    width: 50%;
+    height: 60px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.recycle-container .back-link {
+    height: auto;
+    margin: 0 5px 0;
+}
+
+.recycle-container .recycle-info {
+    display: flex;
+}
+
+.recycle-container .recycle-img-paper {
+    background: #90EE90 ;
+    border-radius: 100%;
+}
+
+.recycle-container .recycle-info img{
+    height:fit-content;
+    margin-right: 2%;
+    align-self: center;
+}
+
+.recycle-container .recycle-info-paper {
+    background: #FFF;
+    border-radius: 8px;
+    padding: 1%;
+    width: auto;
+    height: auto;
+    font-size: 15px;
+    margin-block-end: 3%;
+    align-self: center;
+    text-align: justify;
+}
+
+.recycle-container .side-by-side {
+    justify-content: space-between;
+    width:100%;
+    max-width: 900px;
+    align-items: center;
+    padding: 0 60px;
+}
+
+.recycle-container .side-by-side .expansion-panel {
+    background-color: #fff;
+    width: 50%;
+    height: auto;
+    padding: 0px;
+    font-size: 13px;
+    margin-block-end: 3%;
+    margin-block-start: 3%;
+}
+
+.recycle-container .side-by-side .expansion-panel .panel-content {
+    font-size: 13px;
+}
+
+.recycle-container .curiosity{
+    background: #FFF;
+    border-radius: 8px;
+    padding: 1%;
+    width: auto;
+    height: auto;
+    font-size: 15px;
+    margin-block-end: 3%;
+    margin-block-start: 3%;
+    align-self: center;
+    text-align: justify;
+}

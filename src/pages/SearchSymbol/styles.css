@@ -13,6 +13,7 @@
 
 .listRec-container header img {
     height: 100px;
+    margin-left: 40%;
 }
 
 .listRec-container .button {
@@ -27,12 +28,12 @@
 }
 
 .listRec-container .search-input{
-    display: flex;
-    height: 42px;
-    border: 1px solid #ccc;
+    display:flex;
+    margin: 10px 0;
+    height: 40px;
+    width: 70%;
     border-radius: 8px;
-    width: 100%;
-    margin-bottom: 20px;
+    border:1px solid #adc4cc;
+    font-style: italic;
     padding: 0 10px;
-    font-size: 16px;
 }

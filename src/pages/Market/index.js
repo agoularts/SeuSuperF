@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiPower, FiTrash2, FiArrowLeft } from 'react-icons/fi';
+import { FiArrowLeft } from 'react-icons/fi';
 
 import api from '../../services/api';
 import { validaToken } from '../../services/auth';
@@ -45,6 +45,11 @@ export default function Market(props) {
             <header>
                 <img src={ logoImg } alt="Seu Super" onClick={() => gotoMenu()} />
                 <span>Bem vindo { userName }!</span>
+
+                <Link className="back-link" to="/menu">
+                { <FiArrowLeft size={ 25 } color="#E02041" /> }
+                    Voltar
+                </Link>
             </header>
 
             <h1>Mercados cadastrados</h1>
@@ -67,8 +72,6 @@ export default function Market(props) {
                     </li>
                 ))}
             </ul>
-
-
 
         </div>
     )

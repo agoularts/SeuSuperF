@@ -8,8 +8,8 @@ import './styles.css';
 
 import logoImg from '../../assets/logo.svg'
 
-export default function ListRecycle(props) {
-    const [ recycle, setRecycle ] = useState([]);
+export default function SearchPacking(props) {
+    const [ packing, setPacking ] = useState([]);
     const [ search, setSearch ] = useState('');
     const history = useHistory();
 
@@ -19,13 +19,13 @@ export default function ListRecycle(props) {
                 const token = await validaToken();
                 if(!token){
                     return history.push('/');
-                }   
-            }
+                }
+            } 
             fetch()
-        },
-        []
+        }, 
+        [] 
     )
-
+    
     let time = null
     const handleDigitado = e => {
         let texto = e.target.value
@@ -41,16 +41,15 @@ export default function ListRecycle(props) {
                 const params = {};
                     params.name = search;
 
-
-                const retornoApi = await api.get('searchRecycle', { headers: { auth: localStorage.userToken }, params })
-                    setRecycle(retornoApi.data)
+                const retornoApi = await api.get('searchPacking', { headers: { auth: localStorage.userToken }, params})
+                    setPacking(retornoApi.data)
                     console.log(retornoApi.data)
                 } catch(err) {
                     alert('Deu ruim')
                 }
-            }
+            } 
             fetch()
-        }, [search] 
+        },[search] 
     )
 
     async function gotoMenu() {
@@ -58,17 +57,17 @@ export default function ListRecycle(props) {
     }
     
     return (
-        <div className="listRec-container">
+        <div className="listPack-container">
             <header> 
                 <img src={ logoImg } alt="Seu Super" onClick={() => gotoMenu()} />
             </header>
 
             <input type="search" 
                 className="search-input" 
-                placeholder="Busque por produtos e mercados..."
+                placeholder="Buscar..."
                 onChange={(e) => handleDigitado(e)}
             />
-            
+
             <div>
                 <Link className="back-link" to="/menu">
                     { <FiArrowLeft size={ 25 } color="#E02041" /> }
@@ -76,13 +75,13 @@ export default function ListRecycle(props) {
                 </Link>
             </div>
             
-            { recycle.map(recy => (
-                <div key={ recy.id }>
-                    
-                    <Link className="button" to={`/reciclagem/${recy.id}`}>
-                        { recy.name }
-                        </ Link>
-                       
+            { packing.map(pack => (
+                <div key={ pack.id }>
+                        
+                    <Link className="button" to={`/packing/${pack.id}`}>
+                        { pack.name }
+                    </ Link>
+                        
                 </div>
             ))}
 

@@ -47,11 +47,11 @@
 
 .recycle-container .recycle-img-paper {
     background: #90EE90 ;
-    border-radius: 100px;
+    border-radius: 100%;
 }
 
 .recycle-container .recycle-info img{
-    height:auto;
+    height:fit-content;
     margin-right: 2%;
     align-self: center;
 }

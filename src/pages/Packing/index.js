@@ -26,7 +26,8 @@ export default function Recycle(props) {
 
                 try {
                     const { id } = props.match.params
-                    const retornoApi = await api.get(`/recycle/${id}`, {
+                    const retornoApi = await api.get(`/recycle/${id}`, 
+                    {
                         headers: { 
                             auth: localStorage.userToken 
                         }})
@@ -49,6 +50,11 @@ export default function Recycle(props) {
         <div className="recycle-container" >
             <header>
                 <img src={ logoImg } alt="Seu Super" onClick={() => gotoMenu()} />
+                
+                <Link className="back-link" to="/menu">
+                    {<FiArrowLeft size={25} color="#E02041" />}
+                    Voltar
+                </Link>
             </header>
 
             <div>
@@ -101,11 +107,11 @@ export default function Recycle(props) {
                                 </ExpansionPanel>
                             </div>   
 
-                                <div className="curiosity">
-                                    <Paper className="curiosity-paper">
-                                        <p><strong>Curiosidades:</strong> <br />{ recy.curiosities }</p> </Paper>
-                                </div>
-                        </div>   
+                            <div className="curiosity">
+                                <Paper className="curiosity-paper">
+                                    <p><strong>Curiosidades:</strong> <br />{ recy.curiosities }</p> </Paper>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>

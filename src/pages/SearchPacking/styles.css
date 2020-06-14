@@ -1,21 +1,22 @@
-  .listRec-container {
+  .listPack-container {
     width:100%;
     max-width: 1180px;
     padding: 0 30px;
     margin: 32px auto;
 }
 
-.listRec-container header {
+.listPack-container header {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.listRec-container header img {
+.listPack-container header img {
     height: 100px;
+    margin-left: 40%;
 }
 
-.listRec-container .button {
+.listPack-container .button {
     height: 60px;
     width: 50%;
     padding: 15px;
@@ -26,13 +27,13 @@
     margin-left: 25%;
 }
 
-.listRec-container .search-input{
-    display: flex;
-    height: 42px;
-    border: 1px solid #ccc;
+.listPack-container .search-input{
+    display:flex;
+    margin: 10px 0;
+    height: 40px;
+    width: 70%;
     border-radius: 8px;
-    width: 100%;
-    margin-bottom: 20px;
+    border:1px solid #adc4cc;
+    font-style: italic;
     padding: 0 10px;
-    font-size: 16px;
 }
