@@ -29,7 +29,7 @@ export default function Logon() {
             localStorage.setItem('userToken', response.data.token);
 
             
-            if ('userAdmin')
+            if ('userAdmin' ===true)
                 history.push('/admin');
             else
                 history.push('/menu');

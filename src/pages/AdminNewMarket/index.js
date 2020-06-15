@@ -59,8 +59,8 @@ export default function NewMarket() {
         }
     }
 
-    async function gotoMenu() {
-        history.push("/menu");
+    async function gotoAdmin() {
+        history.push("/admin");
     } 
 
     return (
@@ -69,11 +69,11 @@ export default function NewMarket() {
 
                 {/* Logo e texto */}
                 <section className="logo">
-                    <img src={ logoImg } alt="Seu Super" onClick={() => gotoMenu()} />
+                    <img src={ logoImg } alt="Seu Super" onClick={() => gotoAdmin() }/>
                     <h1>Cadastrar novo mercado</h1>
 
                 {/* Voltar */} 
-                    <Link className="back-link" to="/mercados">
+                    <Link className="back-link" to="/admin">
                         <FiArrowLeft size={ 16 } color="#E02041" />
                             Voltar
                     </Link>
